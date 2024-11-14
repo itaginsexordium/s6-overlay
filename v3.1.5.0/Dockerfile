@@ -26,6 +26,6 @@ RUN mkdir -p $S6_DIR; \
         && untar ${S6_SRC_URL}/${S6_VERSION}/s6-overlay-noarch.tar.xz \
         && untar ${S6_SRC_URL}/${S6_VERSION}/s6-overlay-${S6_ARCH}.tar.xz
 
-COPY rootfs /
+COPY --chmod=755 rootfs /
 
 ENTRYPOINT ["/init"]
